@@ -9,6 +9,7 @@ interface Veiculo{
 (function(){
     const $ = (query: string): HTMLInputElement | null => document.querySelector(query);
 
+    // Função para calcular o tempo que o carro ficou no estacionamento
     function calcTempo(mil: number){
         const min = Math.floor(mil / 60000);
         const sec = Math.floor(mil % 60000) / 1000;
@@ -21,10 +22,12 @@ interface Veiculo{
             return localStorage.patio ? JSON.parse(localStorage.patio): [];
         };
 
+        // Salva os dados do novo veículo
         function salvar(veiculos: Veiculo[]){
             localStorage.setItem('patio', JSON.stringify(veiculos))
         };
 
+        // Cria uma tabela para adicionar os veículos cadastrados no estacionamento
         function adicionar(veiculo: Veiculo, salva?: boolean){
             const row = document.createElement("tr");
             row.innerHTML = `
@@ -35,7 +38,8 @@ interface Veiculo{
                 <button class="delete" data-placa="${veiculo.placa}">X</button>
             </td>
             `;
-
+            
+            // Remove o veículo do sistema ao clicar no botão "X"
             row.querySelector(".delete")?.addEventListener("click", function(){
                 remover(this.dataset.placa);
             })
@@ -46,6 +50,7 @@ interface Veiculo{
 
         };
 
+        // Função para mostrar quanto tempo o veículo ficou no estacionamento ao clicar para remover do sistema
         function remover(placa: string){
 
             const {entrada, nome} = ler().find(veiculo => veiculo.placa === placa);
@@ -58,6 +63,7 @@ interface Veiculo{
             render();
         };
 
+        // Atualiza a página com as informações
         function render(){
             $("#patio")!.innerHTML = "";
             const patio = ler();
@@ -79,6 +85,7 @@ interface Veiculo{
         console.log('Entrei');
         console.log(nome , placa);
 
+        // Obriga a preencher os campos nome e placa
         if(!nome || !placa){
             alert('Campos Nome e Placa obrigatórios');
             return;
