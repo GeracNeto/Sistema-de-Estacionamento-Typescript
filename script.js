@@ -50,7 +50,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
             var tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
             console.log(tempo);
             var preco = calcpreco(tempo);
-            if (!confirm("O ve\u00EDculo ".concat(nome.toUpperCase(), " permanceu por ").concat(tempo, "m. Valor: R$ ").concat(preco, ". Deseja encerrar?")))
+            if (!confirm("O cliente ".concat(nome.toUpperCase(), " permanceu por ").concat(tempo, "m. Valor: R$ ").concat(preco, ". Deseja encerrar?")))
                 return;
             salvar(ler().filter(function (veiculo) { return veiculo.placa !== placa; }));
             render();

@@ -66,7 +66,7 @@ interface Veiculo{
 
             const preco = calcpreco(tempo);
 
-            if(!confirm(`O veículo ${nome.toUpperCase()} permanceu por ${tempo}m. Valor: R$ ${preco}. Deseja encerrar?`)) return;
+            if(!confirm(`O cliente ${nome.toUpperCase()} permanceu por ${tempo}m. Valor: R$ ${preco}. Deseja encerrar?`)) return;
 
             salvar(ler().filter(veiculo => veiculo.placa !== placa));
             render();
