@@ -33,7 +33,6 @@ interface Veiculo{
             row.innerHTML = `
             <td>${veiculo.nome}</td>
             <td>${veiculo.placa}</td>
-            <td>${veiculo.entrada}</td>
             <td>
                 <button class="delete" data-placa="${veiculo.placa}">X</button>
             </td>
