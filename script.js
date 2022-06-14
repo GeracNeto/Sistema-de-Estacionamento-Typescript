@@ -14,8 +14,11 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     // Função para calcular o tempo que o carro ficou no estacionamento
     function calcTempo(mil) {
         var min = Math.floor(mil / 60000);
-        var sec = Math.floor(mil % 60000) / 1000;
-        return "".concat(min, "m e ").concat(sec, "s");
+        return min;
+    }
+    // Função para calcular o preço do estacionamento, R$ 0,15 por minuto + taxa de R$ 2,00
+    function calcpreco(time) {
+        return (0.15 * time) + 2;
     }
     function patio() {
         function ler() {
@@ -45,7 +48,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
         function remover(placa) {
             var _a = ler().find(function (veiculo) { return veiculo.placa === placa; }), entrada = _a.entrada, nome = _a.nome;
             var tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
-            if (!confirm("O ve\u00EDculo ".concat(nome, " permanceu por  ").concat(tempo, ". Deseja encerrar?")))
+            console.log(tempo);
+            var preco = calcpreco(tempo);
+            if (!confirm("O ve\u00EDculo ".concat(nome.toUpperCase(), " permanceu por ").concat(tempo, "m. Valor: R$ ").concat(preco, ". Deseja encerrar?")))
                 return;
             salvar(ler().filter(function (veiculo) { return veiculo.placa !== placa; }));
             render();
@@ -60,6 +65,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
             }
         }
         ;
+        // Retorna todas as funções
         return { ler: ler, adicionar: adicionar, remover: remover, salvar: salvar, render: render };
     }
     patio().render();
@@ -67,7 +73,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
         var _a, _b;
         var nome = (_a = $('#nome')) === null || _a === void 0 ? void 0 : _a.value;
         var placa = (_b = $('#placa')) === null || _b === void 0 ? void 0 : _b.value;
-        console.log('Entrei');
         console.log(nome, placa);
         // Obriga a preencher os campos nome e placa
         if (!nome || !placa) {
