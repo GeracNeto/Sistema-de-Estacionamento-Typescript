@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 /*font-family: 'Pacifico', cursive;*/
 
@@ -30,12 +31,14 @@ img{
 }
 
 h1{
-    font-family: 'Pacifico';
+    margin-top: 5%;
+    font-family: 'Russo One', sans-serif;
     text-transform: uppercase;
     color: #BF9341;
 }
 
 h2{
+    font-family: 'Russo One', sans-serif;
     color: #BF9341;
     margin-top: 2%;
 }
@@ -49,6 +52,7 @@ input{
     color: #F2F2F2;
     border-color: #BF9341;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #cadastrar{
@@ -69,6 +73,7 @@ input{
     flex-direction: column;
     width: 40%;
     background-color: #0E4029;
+    border: 1px solid;
 }
 
 .cabecalho{
@@ -79,15 +84,26 @@ input{
     color: #BF9341;
 }
 
+.cabecalho th{
+    width: 100%;
+}
+
 #patio{
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 1%;
+    text-transform: uppercase;
 }
 
 #patio tr{
     display: flex;
-    justify-content: space-around;
+}
+
+#patio tr td{
+    width: 100%;
+    align-self: center;
+    text-align: center;
 }
 
 .delete{
