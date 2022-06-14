@@ -57,7 +57,6 @@ interface Veiculo{
 
         // Função para mostrar quanto tempo o veículo ficou no estacionamento ao clicar para remover do sistema
         function remover(placa: string){
-
             
             const {entrada, nome} = ler().find(veiculo => veiculo.placa === placa);
 
