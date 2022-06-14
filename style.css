@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@500&display=swap');
+
+/*font-family: 'Pacifico', cursive;*/
+
+body{
+    margin: 0px;
+    font-family: 'Radio Canada', sans-serif;
+    font-size: 1.4rem;
+    background-color: #0B2621;
+    color: #F2F2F2;
+}
+
+.master{
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 10%;
+}
+
+h1{
+    font-family: 'Pacifico';
+    text-transform: uppercase;
+    color: #BF9341;
+}
+
+h2{
+    color: #BF9341;
+    margin-top: 2%;
+}
+
+input{
+    height: 10%;
+    font-size: 1.8rem;
+    margin-top: 2%;
+    width: 50%;
+    background-color: #0E4029;
+    color: #F2F2F2;
+    border-color: #BF9341;
+    text-align: center;
+}
+
+#cadastrar{
+    font-size: 1.5rem;
+    margin-top: 5%;
+    width: 50%;
+    height: 10%;
+    background-color: #D99748;
+    text-transform: uppercase;
+    border: 2px solid;
+    border-color: #F2F2F2;
+    font-weight: bold;
+    color: #0E4029;
+}
+
+.tabela{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: #0E4029;
+}
+
+.cabecalho{
+    display: flex;
+    width: 100%;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    color: #BF9341;
+}
+
+#patio{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#patio tr{
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete{
+    background-color: red;
+    font-weight: bold;
+}
+
+
+
+
+
+
